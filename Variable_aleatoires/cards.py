@@ -7,14 +7,14 @@ game = [v + ' de ' + c for v in values for c in colors]
 # mélanger avec shuffle
 shuffle(game)
 
-# Le jeu 
+# Le jeu
 # print(game) # pour vérifier que vous avez bien mélanger le jeu
 
 count = 0
 while True:
     # on tire au hasard dans un jeu déjà mélanger ça rajoute du suspend
-    choice = int(random() * (32))
-    count +=1
-    if "As" in game[choice]:
-        print(f"Vous avez gagné en {count} coup(s), en trouvant l'{game[choice]}")
+    c = int(random() * 32)
+    count += 1
+    if "As" in game[c]:
+        print(f"Vous avez gagné en {count} coup(s), en trouvant l'{game[c]}")
         break

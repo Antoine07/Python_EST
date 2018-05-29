@@ -29,17 +29,16 @@ Pour simuler le parcours l'algo est le suivant si on part à gauche au premier t
 """
 
 def throw_ball():
-    target = [0] * LEVEL
     route = ball()
-    tanks = [n for n in range(LEVEL + 1)]
+    reservoirs = [n for n in range(LEVEL + 1)]
 
     for d in route:
         if d == 'L':
-            tanks.pop()
+            reservoirs.pop()
         else:
-            tanks.pop(0)
+            reservoirs.pop(0)
 
-    return tanks[0]
+    return reservoirs[0]
 
 
 # print(throw_ball())

@@ -1,3 +1,4 @@
+
 from random import *
 import numpy as np 
 import pylab as pl
@@ -47,3 +48,31 @@ for malade in malades:
             nTM += 1
     
     L.append(nTM/nT)
+
+
+# bornes = np.arange(100)
+
+# pl.plot(bornes, L)
+
+# pl.show()
+
+"""
+Les faux positifs augment si la population f diminue
+
+PT(Mbar) = (1 - f)/(1 + 98f)  lorsque f tend vers 0 alors cette proba tend vers 1 
+ce qui pose problème ... Le test est donc à considérer en fonction de cette remarque
+Si la maladie est rare alors le test est peu fiable 
+
+"""
+
+def f(x):
+    return ((1-x)/(1+ 98*x) )
+
+t = np.linspace(0, 100, 10000)
+
+pl.plot(t, f(t))
+
+pl.show()
+
+
+

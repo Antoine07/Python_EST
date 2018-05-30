@@ -66,3 +66,15 @@ Représenter une liste des users et de leurs nombre de relation PARTIE 3
 
 relation_user_id = [(user['id'], number_relation_user(user) ) for user in populations]
 relation_user_id.sort(key=lambda student: student[1], reverse=True)
+
+"""
+Chaque utilisateur du tableau population a des relations, trouvez les amis des amis de ces relations 
+pour un utilisateur donné
+"""
+
+def relation_of_relation(user):
+    return [(user['id'], r['id'], fof['id']) for r in user['relation'] for fof in r['relation']]
+
+print(relation_of_relation(populations[0]))
+
+print('--------------end')
